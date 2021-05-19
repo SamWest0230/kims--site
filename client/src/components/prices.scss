@@ -1,0 +1,56 @@
+@use '../partials/resets.scss' as *;
+@use '../partials/variables.scss' as *;
+@use '../partials/mixins.scss' as *;
+
+.services{
+    padding: $mobile-padding;
+    background-color: $cp-light;
+    
+    &__title{
+      text-align: center;
+      padding: 1.5rem 0;
+    }
+    &__card{
+      background-color: $cp-light;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 1rem 0;
+      padding: 1rem 1rem;
+      border: 1px solid $cp-dark;
+      border-radius: .5rem;
+      box-shadow: 7px 7px 5px rgba(13, 1, 54, 0.4); 
+      
+      &:hover{
+        border: 1.3px solid $cp-dark;
+        border-radius: .5rem;
+        box-shadow: 10px 10px 7px rgba(13, 1, 54, 0.4); 
+      }
+
+      &--name{
+        line-height: 2rem;
+      }
+
+      &--container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        //  &-price{
+          
+        // }
+
+         &-btn{
+        align-self: center;
+        border: 1px solid $cp-dark;
+        border-radius: .5rem;
+        width: 50%;
+        height: 1.5rem;
+        margin: .5rem 0;
+        background-color: $cp-light;
+        }
+    }
+  }
+}

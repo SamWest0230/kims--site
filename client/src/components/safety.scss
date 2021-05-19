@@ -1,0 +1,9 @@
+@use '../partials/resets.scss' as *;
+@use '../partials/variables.scss' as *;
+@use '../partials/mixins.scss' as *;
+
+.safety{
+    background-color: #ffda77;
+    text-align: center;
+    padding: .3rem 0;
+}

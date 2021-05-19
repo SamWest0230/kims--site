@@ -1,0 +1,27 @@
+[
+    {
+        "id": "1",
+        "name": "45 Minute Massage Therapy",
+        "Price": "$55.00"
+    },
+    {
+        "id": "2",
+        "name": "60 Minute Massage Therapy",
+        "Price": "$90.00"
+    },
+    {
+        "id": "3",
+        "name": "75 Minute Massage Therapy",
+        "Price": "$135.00"
+    },
+    {
+        "id": "4",
+        "name": "90 Minute Massage Therapy",
+        "Price": "$150.00"
+    },
+    {
+        "id": "5",
+        "name": "Kids 30 Minute Massage Therapy",
+        "Price": "$55.00"
+    }
+]
