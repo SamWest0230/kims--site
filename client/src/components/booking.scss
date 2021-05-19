@@ -1,3 +1,35 @@
 @use '../partials/resets.scss' as *;
 @use '../partials/variables.scss' as *;
 @use '../partials/mixins.scss' as *;
+
+.booking{
+    padding: $mobile-padding;
+    background-color: $cp-light;
+    &__title{
+        text-align: center;
+        padding: 1.5rem 0;
+    }
+    &__form{
+        display: flex;
+        flex-direction: column;
+
+
+        &--label{
+            width: 100%;
+            margin: .5rem 0;
+        }
+        &--input{
+            border: 1px solid $cp-dark;
+            border-radius: .5rem;
+            padding: .5rem .5rem;
+        }
+    }
+
+    &__cancellation{
+        padding: 1.5rem 0;
+        border-bottom: 1px solid $cp-dark;
+        &--text{
+            cursor: pointer;
+        }
+    }
+}

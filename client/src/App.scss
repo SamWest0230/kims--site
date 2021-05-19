@@ -1,3 +1,7 @@
 @use './partials/resets.scss' as *;
 @use './partials/variables.scss' as *;
 @use './partials/mixins.scss' as *;
+
+.App{
+    background-color: $cp-light;
+}
