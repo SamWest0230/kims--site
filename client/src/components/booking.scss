@@ -5,31 +5,126 @@
 .booking{
     padding: $mobile-padding;
     background-color: $cp-light;
+    @include tablet{
+        padding: $tablet-padding;
+    }
+    @include desktop{
+        padding: $desktop-padding;
+    }
     &__title{
         text-align: center;
-        padding: 1.5rem 0;
+        padding: 0rem 0 3rem 0;
+
+        @include desktop{
+            padding: 1rem 0 4rem 0;
+        }
     }
     &__form{
         display: flex;
         flex-direction: column;
 
+        @include tablet{
+            flex-direction: row;
+            // max-width: 1141px;
+        }
+
+        &--left{
+            display: flex;
+        flex-direction: column;
+            @include tablet{
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                padding-right: .5rem;
+            }
+        }
+        &--right{
+            display: flex;
+        flex-direction: column;
+            @include tablet{
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                padding-left: .5rem;
+            }
+        }
+
 
         &--label{
             width: 100%;
             margin: .5rem 0;
+            max-width: 500px;
+
+            @include desktop{
+                margin: 1rem 0;
+            }
         }
         &--input{
             border: 1px solid $cp-dark;
             border-radius: .5rem;
             padding: .5rem .5rem;
+            resize: none;
+            max-width: 500px;
+            
+            @include tablet{
+                max-width: none;
+            }
+
+            @include desktop{
+                padding: .8rem .5rem;
+            }
+        }
+        &--date{
+            border: 1px solid $cp-dark;
+            border-radius: .5rem;
+            padding: .3rem .5rem;
+            resize: none;
+            max-width: 500px;
+
+              
+            @include tablet{
+                max-width: none;
+            }
+
+            @include desktop{
+                padding: .6rem .5rem;
+            }
+        }
+
+        &--btn{
+            width: 50%;
+            border: 1px solid $cp-dark;
+            border-radius: .5rem;
+            padding: .2rem .2rem;
+            margin-top: 1.5rem;
+            max-width: 200px;
+           
+
+            @include tablet{
+                height: 2rem;
+                margin-top: 3rem;
+                align-self: flex-end;
+            }
+
+            @include desktop{
+                height: 2rem;
+            }
+            
         }
     }
 
     &__cancellation{
         padding: 1.5rem 0;
         border-bottom: 1px solid $cp-dark;
+
+        @include desktop{
+            padding: 2.5rem 0;
+        }
         &--text{
             cursor: pointer;
         }
     }
+}
+.error{
+    border: 1px solid red;
 }

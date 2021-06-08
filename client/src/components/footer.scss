@@ -6,13 +6,40 @@
     padding: $mobile-padding;
     text-align: center;
     background-color: $cp-light;
-    margin-bottom: 3rem;
+    padding-bottom: 3rem;
 
+    @include tablet{
+        padding: $tablet-padding;
+        padding-bottom: .5rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    @include desktop{
+        padding: $desktop-padding;
+    }
+
+    &__info{
+        @include tablet{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        }
+    }
     
     &__name{
         align-self: center;
         color: $cp-dark;
         margin: 5rem 1rem 1rem 1rem;
+
+        @include tablet{
+            margin: 3rem 0rem 1rem 0rem;
+        }
+        @include desktop{
+            font-size: 3rem;
+        }
     }
     &__position{
         color: $cp-dark;
@@ -27,16 +54,76 @@
         justify-content: space-evenly;
         align-items: center;
 
+        @include tablet{
+            display: none;
+        }
+
+        
+
+        &--icon{
+            width: 2.5rem;
+            height: 2.5rem;
+            cursor: pointer;
+            margin-bottom: 3rem;
+        }
+    }
+    &__socials2{
+        display: none;
+
+        @include tablet{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            padding-top: 2rem;
+        }
+        @include desktop{
+            width: 100%;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 3rem 0 0 0;
+        }
+
         &--icon{
             width: 2.5rem;
             height: 2.5rem;
             cursor: pointer;
             margin-bottom: 2rem;
+
+            @include desktop{
+                width: 3rem;
+                height: 3rem; 
+                margin-right: 4rem;     
+            }
         }
     }
 
     &__links{
+        @include tablet{
+               display: flex;
+               flex-direction: row; 
+               justify-content: space-evenly;
+        }
+        &--left{
+            @include tablet{
+                display: flex;
+               flex-direction: column;
+                width: 50%;
+            }
+        }
+        &--right{
+            @include tablet{
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+            }
+        }
 
+        @include tablet{
+            width: 50%;
+            margin: 3rem 0rem 1rem 0rem;
+        }
         &--link{
             padding: .5rem 0;
             cursor: pointer;
@@ -45,5 +132,10 @@
 }
 .special{
       width: 3rem;
-      height: 3rem;      
+      height: 3rem; 
+      
+      @include desktop{
+        width: 3.5rem;
+        height: 3.5rem;
+      }
 }

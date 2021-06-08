@@ -36,6 +36,14 @@
         align-self: center;
         color: $cp-dark;
         margin: 1rem 1rem;
+
+        @include tablet{
+           margin:1rem 1rem 2rem 1rem; 
+        }
+
+        @include desktop{
+            margin: 0 0 1.5rem 0;
+        }
     }
 
     &__burger{
@@ -59,6 +67,7 @@
         width: 100%;
         @include desktop{
             display: flex;
+            padding-top: .5rem;
         }
       
         
@@ -67,7 +76,7 @@
             display: none;
             color: $cp-black;
             font-size: 1.3rem;
-            padding: 2rem 1.5rem;
+            padding: .5rem 1.5rem;
             clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
             animation-name: titleAnimation;
             animation-iteration-count: 1;
@@ -93,6 +102,9 @@
     align-items: center;
     justify-content: space-evenly;
     margin: 3rem 0;
+    @include tablet{
+        margin: 0 0 1rem 0;
+    }
     @include desktop{
         display: none;
        }

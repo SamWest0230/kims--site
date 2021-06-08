@@ -8,6 +8,10 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @include desktop{
+        height: 50vw;
+    }
     
 
     &__container{
@@ -19,6 +23,15 @@
         text-align: center;
         justify-content: center;
         padding: $mobile-padding;
+
+        @include tablet{
+            height: 80vw;
+            padding: $tablet-padding;
+        }
+        @include desktop{
+            height: 50vw;
+            padding: $desktop-padding;
+        }
         
         
        
@@ -27,6 +40,10 @@
             color: $cp-black;
             line-height: 1.5;
             font-size: 2.5rem;
+
+            @include desktop{
+               font-size: 3.3rem;
+            }
            
         }
         &--text2{
@@ -35,6 +52,29 @@
             font-size: 1.5rem;
             padding-bottom: .2rem;
             border-bottom: 1px solid $cp-white;
+
+            @include tablet{
+                border-bottom: none;
+            }
+            @include desktop{
+                font-size: 2.3rem;
+             }
+
+            &-hr{
+               display: none;
+               margin: 0;
+               
+               @include tablet{
+                   display: inline-block;
+                   width: 70%;
+                   margin-top: 1rem;
+                   align-self: center;
+               }
+               @include desktop{
+                width: 65%;
+                align-self: center;
+             }
+            }
            
            
         }
@@ -42,7 +82,6 @@
             margin-top: 4rem;
             display: flex;
             flex-direction: column;
-            backdrop-filter: grayscale(100%);
     
             &-btn{
                 align-self: center;
@@ -52,6 +91,15 @@
                 height: 1.5rem;
                 margin: .5rem 0;
                 background-color: $cp-light;
+
+                @include tablet{
+                    width: 30%;
+                    height: 1.6rem;
+                }
+                @include desktop{
+                   height: 1.8rem;
+                   font-size: 1rem;
+                 }
             }
         }
 

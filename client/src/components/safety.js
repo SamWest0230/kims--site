@@ -1,5 +1,5 @@
 import React from 'react';
-import Covid from './modals/covid';
+import Covid from './modals/covid/covid';
 import './safety.scss';
 
 

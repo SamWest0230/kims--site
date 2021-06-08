@@ -3,38 +3,40 @@
 @use "../../partials/mixins" as *;
 
 
-section.modal {
-    background-color: $cp-light;
-    width: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
-    box-shadow: 0px 0px 200px 2000px rgba(255, 255, 255);
-    @include tablet {
-      width: 70%;
-      margin-top: 7rem;
-      position: absolute;
-      top: 35vh;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      box-shadow: 0px 0px 200px 5000px rgba(19, 24, 44, .7);
-    }
-  }
-  
-  .modal {
+.modal {
     position: relative;
     width: 100%;
     z-index: 1000;
     border-radius: .8rem;
     text-align: left;
     padding: $mobile-padding;
-
-
-    &__close {
-        align-self: flex-end;
-        width: 1.5rem;
-        height: 1.5rem;
-      margin: 1rem 1rem;
-    } 
     
+
+    &__info{
+      display: flex;
+    flex-direction: column;
+
+    &--a{
+      align-self: flex-end;
+    }
+      
+    &--close {
+        align-self: flex-end;
+          width: 1.5rem;
+          height: 1.5rem;
+          margin-top: 1rem;
+      } 
+
+      &--title{
+        text-align: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid $cp-dark;
+      }
+      &--text{
+        padding: 1rem 0;
+        line-height: 1.5;
+      }
+    }
   }
+
+

@@ -1,0 +1,52 @@
+@use '../partials/resets.scss' as *;
+@use '../partials/variables.scss' as *;
+@use '../partials/mixins.scss' as *;
+
+.testimonials{
+    display: flex;
+    flex-direction: column;
+    padding: $mobile-padding;
+
+    @include tablet{
+        padding: $tablet-padding;
+    }
+
+    @include desktop{
+        padding: $desktop-padding;
+    }
+
+    &__title{
+        text-align: center;
+      padding: 1.5rem 0;
+    }
+
+    &__container{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &--card{
+            display: flex;
+            flex-direction: column;
+            padding: .5rem 1rem;
+
+            &-review{
+                line-height: 1.5;
+
+                @include tablet{
+                    padding: .5rem 1rem;
+                }
+
+                @include desktop{
+                    padding: 1rem 1.5rem;
+                }
+            }
+            &-name{
+                text-align: center;
+                margin: .5rem 0;
+            }
+
+        }
+    }
+}

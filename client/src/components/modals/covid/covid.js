@@ -1,10 +1,10 @@
 import React from 'react';
-import Close from "../.././assets/icons/close-24px.svg";
+import Close from "../../.././assets/icons/close-24px.svg";
 import './covid.scss';
 
 const Covid = (props) => {
     return (
-        <section className='modal '>
+        <section className='modal'>
             <div className='modal__header'>
             <img src={Close} className="modal__close" onClick={props.close} />
             <h1 className='modal__header--name'>Covid-19 Information and Policies</h1>
@@ -12,10 +12,10 @@ const Covid = (props) => {
             </div>
 
             <div className='modal__disclaimer'>
-            <h2 className='modal__disclaimer--client'>Client MUST</h2>
+            <h2 className='modal__disclaimer--client'>Clients MUST</h2>
             <ul className='modal__disclaimer--list'>
-                <li className='modal__disclaimer--list-item'>Wear a mask for entire duration of the appoitment, untill I leave your home. </li>
-                <li className='modal__disclaimer--list-item'>Sanatize hands before the appoitment. </li>
+                <li className='modal__disclaimer--list-item'>Wear a mask for entire duration of the appointment, until I leave your home. </li>
+                <li className='modal__disclaimer--list-item'>Sanatize hands before the appointment. </li>
                 <li className='modal__disclaimer--list-item'>Be the only person in the room during the appointment.</li>
             </ul>
             </div>

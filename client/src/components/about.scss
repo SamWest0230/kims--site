@@ -23,6 +23,23 @@
     padding: $mobile-padding;
     background-color: $cp-light;
 
+    @include tablet{
+        padding: $tablet-padding;
+    }
+    @include desktop{
+        padding: $desktop-padding;
+    }
+    &__desk{
+        @include desktop{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-bottom: 3rem;
+        }
+    }
+
     &__info{
         display: flex;
         flex-direction:row;
@@ -30,11 +47,37 @@
         align-items: center;
         text-align: center;
         padding-top: 1.5rem;
+
+        @include desktop{
+            padding-top: 0;
+            display: block;
+            text-align: center;
+        }
         
         &--text{
             margin: .5rem 0;
             width: 100%;
             line-height: 1.5;
+
+            @include desktop{
+                margin: 1rem 0;
+                line-height: normal;
+            }
+        }
+        &--textdesk{
+            display: none;
+
+            @include desktop{
+                display: inline-block;
+                align-self: flex-start;
+                text-align: center;
+                width: 80%;
+                padding: 1rem 0;
+                line-height: 1.5;
+                border-top: 1px solid $cp-dark;
+                border-bottom: 1px solid $cp-dark;
+
+            }
         }
         &--location{
             width: 100%;
@@ -43,6 +86,10 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 1.5rem;
+
+            @include desktop{
+                padding-top: 1rem;
+            }
         &-icon{
             width: 2rem;
             height: 2rem;
@@ -50,6 +97,7 @@
             animation-fill-mode: both;
             animation-duration: 1s;
             }
+          
         }
     }
 
@@ -58,17 +106,68 @@
             border-top: 1px solid $cp-dark;
             border-bottom: 1px solid $cp-dark;
 
+            @include desktop{
+                border: none;
+            }
+
+
+        &--img{
+            display: none;
+            
+            @include desktop{
+                display: block;
+                height: 40vw;
+                border-radius: 1rem;
+                margin-bottom: 1.5rem;
+                max-width: 400px;
+                max-height: 528px;
+            }
+        }
+
         &--text{
             padding: .5rem 0;
             line-height: 1.5rem;
+
+            @include tablet{
+                padding: 1rem 0;
+                line-height: 1.5rem;
+            }
+
+            @include desktop{
+               display: none;
+            }
         }
     }
 
     &__benefits{
 
+        @include desktop{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
         &--title{
             text-align: center;
             padding: 1.5rem 0;
+            
+            @include desktop{
+                width: 100%;
+                padding: 1rem 0 4rem 0;
+            }
+        }
+        &--pic{
+            display: none;
+
+            @include desktop{
+                height: 40vw;
+                border-radius: 1rem;
+                display: block;
+                margin-right: 3rem;
+                max-width: 400px;
+                max-height: 528px;
+            }
         }
       
         &--container{
@@ -80,9 +179,17 @@
             border-bottom: 1px solid $cp-dark;
             align-items: center;
 
+            @include desktop{
+                margin-left: 3rem;
+            }
+
             &-text{
                 line-height: 1.5;
                 width: 50%;
+
+                @include desktop{
+                    width: 90%;
+                }
             }
             &-icon{
                 width: 2rem;

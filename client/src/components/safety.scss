@@ -4,6 +4,18 @@
 
 .safety{
     background-color: #ffda77;
-    text-align: center;
     padding: .3rem 0;
+
+    &__name{
+        text-align: center;
+    }
+
+    @include tablet {
+        text-align: left;
+       }
+
+
+    @include desktop{
+        padding: .5rem 0;
+    }
 }

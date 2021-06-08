@@ -1,0 +1,140 @@
+@use "../../../partials/resets"as *;
+@use "../../../partials/variables" as *;
+@use "../../../partials/mixins" as *;
+
+
+.modal{
+    position: relative;
+    width: 100%;
+    height: 150vh;
+    z-index: 1000;
+
+    @include tablet {
+      border-radius: 3px;
+      height: 250vh;
+    }
+  
+        &__header{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            border-bottom: 1px solid $cp-dark;
+
+            @include desktop {
+                padding-bottom: 3rem;
+            }
+
+
+            &--name{
+                width: 100%;
+                padding: 1rem 0;
+                font-size: 1.5rem;
+                @include desktop {
+                    padding-bottom: 1.5rem;
+                    font-size: 2rem;
+                }
+            
+            &--info{
+                width: 100%;
+                padding: 1rem 0;
+                line-height: 1rem;
+                font-size: 1.2rem;
+            }
+        }
+    }
+    
+        &__disclaimer{
+            display: flex;
+            flex-direction: column;
+            padding: 1rem 0;
+            border-bottom: 1px solid $cp-dark;
+
+            @include desktop {
+                padding: 2rem 0;
+            }
+    
+            &--client{
+                padding: .5rem 0;
+                font-size: 1.5rem;
+            }
+            &--list{
+                padding: $mobile-padding;
+                &-item{
+                    padding: .3rem 0;
+
+                    @include desktop {
+                        padding: .7rem 0;
+                    }
+                }
+            }
+        }
+    
+        &__info{
+            display: flex;
+            flex-direction: column;
+            
+            &--name{
+                padding: 1rem 0;
+                line-height: 1.2rem;
+                font-size: 1rem;
+
+                @include desktop {
+                   font-size: 1.5rem;
+                   line-height: normal;
+                }
+            }
+        }
+        &__list{
+            padding: $mobile-padding;
+    
+            &--item{
+                padding: .3rem 0;
+
+                @include desktop {
+                    padding: .5rem 0;
+                }
+            }
+        }
+    
+        &__close {
+            align-self: flex-end;
+            width: 1.5rem;
+            height: 1.5rem;
+          margin: 1rem 1rem;
+        } 
+    
+        &__moreInfo{
+            padding: 1rem 0;
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid $cp-dark;
+            text-align: center;
+            
+                &--text{
+                    width: 100%;
+                    align-self: center;
+                   
+                    @include desktop{
+                        font-size: 1.2rem;
+                    }
+                }
+                &--btn{
+                    margin: 1rem 0;
+                    background-color: $cp-blue;
+                    color: $cp-dark;
+                    border: none;
+                    border-radius: .3rem;
+                    width: 50%;
+                    height: 1.5rem;
+
+                    @include desktop{
+                        height: 1.8rem;
+                        width: 30%;
+                        font-size: 1rem;
+                    }
+                }
+            
+        }
+        
+     }
+    

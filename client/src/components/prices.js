@@ -1,5 +1,6 @@
 import React from 'react';
 import './prices.scss';
+import { Link } from "react-scroll";
 import prices from '../data/pricing.json'
 
 const Price = () => {
@@ -11,11 +12,9 @@ const Price = () => {
                 {prices.map(price => {
                     return (
                     <div className='services__card'>
-                        {/* <img src={} /> */}
                         <h2 className='services__card--name'>{price.name}</h2>
                         <div className className='services__card--container'>
                         <h3 className='services__card--container-price'>{price.Price}</h3>
-                        <button className='services__card--container-btn'>Book Now</button>
                         </div>
                     </div>
                 )})}
