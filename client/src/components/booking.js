@@ -142,13 +142,13 @@ class Booking extends React.Component{
                     <label className='booking__form--label' htmlFor='address'>Your Location</label>
                     <input id='address' className='booking__form--input' type='address' name='address' onChange={this.handleChange}></input>
 
-                    <label className='booking__form--label' htmlFor='date'>Preffered Appointment Date</label>
+                    <label className='booking__form--label' htmlFor='date'>Preferred Appointment Date</label>
                     <input id='date' className='booking__form--date' type='date' name='date' onChange={this.handleChange}></input>
 
-                    <label className='booking__form--label' htmlFor='time'>Preffered Appointment Time</label>
+                    <label className='booking__form--label' htmlFor='time'>Preferred Appointment Time</label>
                     <input id='time' className='booking__form--date' type='time' name='time' onChange={this.handleChange}></input>
 
-                    <label className='booking__form--label' htmlFor='health'>Please list any Health Concerns or Medical Conditions If you feel Necessary</label>
+                    <label className='booking__form--label' htmlFor='health'>Please list any health concerns or medical conditions if you feel necessary</label>
                     <textarea id='health' className='booking__form--input' type='textarea' name='health' onChange={this.handleChange}></textarea>
 
                     <button type='submit' className='booking__form--btn'>Book</button>

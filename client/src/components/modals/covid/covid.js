@@ -15,14 +15,14 @@ const Covid = (props) => {
             <h2 className='modal__disclaimer--client'>Clients MUST</h2>
             <ul className='modal__disclaimer--list'>
                 <li className='modal__disclaimer--list-item'>Wear a mask for entire duration of the appointment, until I leave your home. </li>
-                <li className='modal__disclaimer--list-item'>Sanatize hands before the appointment. </li>
+                <li className='modal__disclaimer--list-item'>Sanitize hands before the appointment. </li>
                 <li className='modal__disclaimer--list-item'>Be the only person in the room during the appointment.</li>
             </ul>
             </div>
             
            
             <div className='modal__info'>
-            <h2 className='modal__info--name'>Rescheduel or Cancel if you are experiencing any of the symptoms below</h2>
+            <h2 className='modal__info--name'>Reschedule or Cancel if you are experiencing any of the symptoms below</h2>
             <ul className='modal__list'>
                 <li className='modal__list--item'>new or worsening cough</li>
                 <li className='modal__list--item'>shortness of breath or difficulty breathing</li>
