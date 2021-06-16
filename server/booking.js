@@ -15,15 +15,13 @@ const transporter = nodemailer.createTransport({
   });
 
 router.post("/", (req, res) => {
-
     const email = {
-            from: req.body.email,
+            from: process.env.EMAIL,
             to: process.env.EMAIL,
             subject: req.body.appoitment,
-            text: `NAME: ${req.body.name}, PHONE: ${req.body.phone}, EMAIL: ${req.body.email}, APPOITMENT TYPE: ${req.body.appoitment}, ADDRESS ${req.body.address}, DATE: ${req.body.date}, TIME: ${req.body.time}, HEALTH CONCERNS: ${req.body.health},`
+            text: `NAME: ${req.body.name}, \nPHONE: ${req.body.phone}, \nEMAIL: ${req.body.email}, \nAPPOITMENT TYPE: ${req.body.appoitment}, \nADDRESS ${req.body.address}, \nDATE: ${req.body.date}, \nTIME: ${req.body.time}, \nHEALTH-CONCERNS: ${req.body.health},`
 
     }
-console.log(email);
 transporter.sendMail(email, (err, data) => {
     if (err) {
       console.log(err);
@@ -32,7 +30,7 @@ transporter.sendMail(email, (err, data) => {
       res.status(200).send("Email successfully sent to recipient!");
     }
 });
-
+ res.sendStatus(200)
 
 })
 

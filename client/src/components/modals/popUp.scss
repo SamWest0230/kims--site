@@ -1,0 +1,36 @@
+@use "../../partials/resets"as *;
+@use "../../partials/variables" as *;
+@use "../../partials/mixins" as *;
+
+
+.modal {
+    position: relative;
+    width: 100%;
+    z-index: 1000;
+    border-radius: .8rem;
+    text-align: left;
+    padding: $mobile-padding;
+    
+
+    &__info{
+      display: flex;
+    flex-direction: column;
+    height: 25vh;
+
+    &--a{
+      align-self: flex-end;
+    }
+      
+    &--close {
+        align-self: flex-end;
+          width: 1.5rem;
+          height: 1.5rem;
+          margin-top: 1rem;
+      } 
+
+      &--title{
+        text-align: center;
+        padding: 1rem 0;
+      }
+    }
+  }

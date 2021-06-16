@@ -68,16 +68,16 @@ closeFAQ = () => {
 
                 <div className='footer__socials'>
                 <a href={"https://www.linkedin.com/in/kimnee-chen-645109140/"}>
-                <img className='footer__socials--icon' src={linked} />
+                <img className='footer__socials--icon' src={linked} alt='LinkedIn' />
                 </a>
-                <a href={"mailto:name@domain"}>
-                <img className='footer__socials--icon special' src={mail} />
+                <a href={"mailto:kimnee.chen@gmail.com"}>
+                <img className='footer__socials--icon special'src={mail}  alt='email' />
                 </a>
                 <a href={"https://www.facebook.com/KimneeRMT "}>
-                <img className='footer__socials--icon' src={fb} />
+                <img className='footer__socials--icon' src={fb} alt='facebook' />
                 </a>
                 <a href={"https://www.instagram.com/kimneechenrmt/"}>
-                <img className='footer__socials--icon' src={insta} />
+                <img className='footer__socials--icon' src={insta} alt='instagram' />
                 </a>
                 </div>
 
@@ -102,16 +102,16 @@ closeFAQ = () => {
 
                 <div className='footer__socials2'>
                 <a href={"https://www.linkedin.com/in/kimnee-chen-645109140/"}>
-                <img className='footer__socials2--icon' src={linked} />
+                <img className='footer__socials2--icon' alt='LinkedIn' src={linked} />
                 </a>
                 <a href={"mailto:name@domain"}>
-                <img className='footer__socials2--icon special' src={mail} />
+                <img className='footer__socials2--icon special' alt='email' src={mail} />
                 </a>
                 <a href={"https://www.facebook.com/KimneeRMT "}>
-                <img className='footer__socials2--icon' src={fb} />
+                <img className='footer__socials2--icon' alt='facebook' src={fb} />
                 </a>
                 <a href={"https://www.instagram.com/kimneechenrmt/"}>
-                <img className='footer__socials2--icon' src={insta} />
+                <img className='footer__socials2--icon' alt='instagram' src={insta} />
                 </a>
                 </div>
             </section>

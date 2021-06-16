@@ -7,7 +7,9 @@ const FAQ = (props) => {
     return (
         <section className='modal'>
             <div className='faq'>
-            <img src={Close} className="faq__close" onClick={props.close} />
+            <Link className='modal__info--a' activeClass="active" to="footer" spy={true} smooth={true} duration={500}>  
+            <img src={Close} className="faq__close" onClick={props.close} alt='close' />
+            </Link>
                 <h1 className='faq__title'>F.A.Q</h1>
                 
            

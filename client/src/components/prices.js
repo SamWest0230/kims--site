@@ -1,6 +1,5 @@
 import React from 'react';
 import './prices.scss';
-import { Link } from "react-scroll";
 import prices from '../data/pricing.json'
 
 const Price = () => {

@@ -1,6 +1,7 @@
 import React from 'react';
 import './booking.scss';
 import Cancellation from './modals/cancellation';
+import Popup from './modals/popUp';
 import prices from '../data/booking.json'
 import axios from 'axios'
 
@@ -8,10 +9,11 @@ class Booking extends React.Component{
 
     state = {
         showmodal: false,
+        Popup: false,
         name: "",
         phone: "",
         email: "",
-        appoitment: "",
+        appointment: "",
         address: "",
         date: "",
         time:"",
@@ -29,24 +31,35 @@ class Booking extends React.Component{
         })
         window.scrollTo(0,0);
     }
+    Popup = () => {
+      this.setState({
+          Popup: true
+      })
+      window.scrollTo(0,0);
+  }
     closeModal = () => {
         this.setState({
-            showmodal: false
+            showmodal: false,
+            Popup: false
         })
         
+    }
+    alert = () => {
+      window.alert("Email Sent")
+      document.getElementById("form").reset();
     }
     handleSubmit = (e) => {
         e.preventDefault();
         const phoneRegEx = /^\(?(\d{3})\)?[ -]?(\d{3})[ -]?(\d{4})$/
         const emailRegEx = /^([a-z.0-9]+)@([a-z.0-9]+).(com|ca)$/
     
-        const {name, phone, email, appoitment, address, date, time, health } = this.state;
-        if (!name || !address || !date || !time || !appoitment || !phone || (phone && !phone.match(phoneRegEx)) || !email || (email && !email.match(emailRegEx))) {
+        const {name, phone, email, appointment, address, date, time, health } = this.state;
+        if (!name || !address || !date || !time || !appointment || !phone || (phone && !phone.match(phoneRegEx)) || !email || (email && !email.match(emailRegEx))) {
           if(!name) {
             document.getElementById("name").classList.add("error");
           }
-          if(!appoitment) {
-            document.getElementById("appoitment").classList.add("error");
+          if(!appointment) {
+            document.getElementById("appointment").classList.add("error");
           }
           if(!address) {
             document.getElementById("address").classList.add("error");
@@ -63,31 +76,39 @@ class Booking extends React.Component{
           if((email && !email.match(emailRegEx)) || !email) {
             document.getElementById("email").classList.add("error");
           }
-        };
+          return;
+        }
+        document.getElementById("name").classList.remove("error");
+        document.getElementById("appointment").classList.remove("error");
+        document.getElementById("address").classList.remove("error");
+        document.getElementById("date").classList.remove("error");
+        document.getElementById("time").classList.remove("error");
+        document.getElementById("phone").classList.remove("error");
+        document.getElementById("email").classList.remove("error");
     
         const massage= {
           name: name,
           phone: phone,
           email: email,
-          appoitment: appoitment,
+          appointment: appointment,
           address: address,
           date: date,
           time: time,
           health: health,
         }
-        console.log(massage)
         axios
           .post("http://localhost:8080/booking", massage)
           .then (response => {
+            console.log(response)
             if (response.status === 200) {
-              this.setState({
-                isSubmitted: true
-              })
+              this.Popup()
+              document.getElementById("form").reset();
             }
           })
           .catch(err => {
             console.log(err);
           });
+          // this.alert();
       }
 
     render(){
@@ -95,38 +116,39 @@ class Booking extends React.Component{
 
             <section className='booking'>
                 {this.state.showmodal && <Cancellation close={this.closeModal} />}
+                {this.state.Popup && <Popup close={this.closeModal} />}
                 <h2 className='booking__title'>Booking</h2>
-               <form className='booking__form' onSubmit={this.handleSubmit}>
+               <form id='form' className='booking__form' onSubmit={this.handleSubmit}>
                <div className='booking__form--left'>
-                    <label className='booking__form--label'>Full Name</label>
+                    <label className='booking__form--label' htmlFor='name'>Full Name</label>
                     <input id="name" className='booking__form--input' type='text' name='name' onChange={this.handleChange}></input>
 
-                    <label className='booking__form--label'>Phone Number</label>
+                    <label className='booking__form--label' htmlFor='phone'>Phone Number</label>
                     <input id="phone" className='booking__form--input' type='tel' name='phone' onChange={this.handleChange}></input>
 
-                    <label className='booking__form--label'>Email</label>
+                    <label className='booking__form--label' htmlFor='email'>Email</label>
                     <input id="email" className='booking__form--input' type='email' name='email' onChange={this.handleChange}></input>
 
-                    <label className='booking__form--label'>Type of Appointment</label>
-                    <select className='booking__form--input' onChange={this.handleChange} name='appoitment'>
+                    <label className='booking__form--label' htmlFor='appointment'>Type of Appointment</label>
+                    <select className='booking__form--input' onChange={this.handleChange} id='appointment' name='appointment'>
                         <option value='none'>Please Select</option>
                         {prices.map(price => {
                             return(
-                            <option id='appoitment' value={price.name}>{price.name}</option>
+                            <option id='appointment' value={price.name}>{price.name}</option>
                         )})}
                     </select>
                     </div>
                     <div className='booking__form--right'>
-                    <label className='booking__form--label'>Your Location</label>
+                    <label className='booking__form--label' htmlFor='address'>Your Location</label>
                     <input id='address' className='booking__form--input' type='address' name='address' onChange={this.handleChange}></input>
 
-                    <label className='booking__form--label'>Preffered Appointment Date</label>
+                    <label className='booking__form--label' htmlFor='date'>Preffered Appointment Date</label>
                     <input id='date' className='booking__form--date' type='date' name='date' onChange={this.handleChange}></input>
 
-                    <label className='booking__form--label'>Preffered Appointment Time</label>
+                    <label className='booking__form--label' htmlFor='time'>Preffered Appointment Time</label>
                     <input id='time' className='booking__form--date' type='time' name='time' onChange={this.handleChange}></input>
 
-                    <label className='booking__form--label'>Please list any Health Concerns or Medical Conditions If you feel Necessary</label>
+                    <label className='booking__form--label' htmlFor='health'>Please list any Health Concerns or Medical Conditions If you feel Necessary</label>
                     <textarea id='health' className='booking__form--input' type='textarea' name='health' onChange={this.handleChange}></textarea>
 
                     <button type='submit' className='booking__form--btn'>Book</button>

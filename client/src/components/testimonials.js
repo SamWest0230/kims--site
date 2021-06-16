@@ -59,12 +59,12 @@ class Testimonials extends React.Component {
             <section className='testimonials'>
                 <h2 className='testimonials__title'>Testimonials</h2>
                 <div className='testimonials__container'>
-                    <img  className='testimonials__container--arrow' onClick={this.previous} src={left} />
+                    <img  className='testimonials__container--arrow' alt='arrow' onClick={this.previous} src={left} />
                     <div className='testimonials__container--card'>
                         <p className='testimonials__container--card-review'>{test.review}</p>
                         <h3 className='testimonials__container--card-name'>-{test.name}</h3>
                     </div>
-                    <img  className='testimonials__container--arrow' onClick={this.next} src={right} />
+                    <img  className='testimonials__container--arrow' alt='arrow' onClick={this.next} src={right} />
                 </div>
 
             </section>

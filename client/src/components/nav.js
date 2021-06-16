@@ -30,7 +30,7 @@ state = {
         return(
         
             <section className='nav'>
-                <img className='nav__burger' src={burger} onClick={ () => this.showNav()} />
+                <img className='nav__burger' alt='menu' src={burger} onClick={ () => this.showNav()} />
                 
                 <div className='desk'>
                 <Link activeClass="active" to="about" spy={true} smooth={true} duration={1000}>

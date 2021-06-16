@@ -6,7 +6,7 @@ const Covid = (props) => {
     return (
         <section className='modal'>
             <div className='modal__header'>
-            <img src={Close} className="modal__close" onClick={props.close} />
+            <img src={Close} className="modal__close" alt='close' onClick={props.close} />
             <h1 className='modal__header--name'>Covid-19 Information and Policies</h1>
             <h3 className='modal__header--info'>Registered Massage Therapists are a Regulated Health Profession and can continue working during COVID-19 lockdown.</h3>
             </div>
@@ -37,13 +37,7 @@ const Covid = (props) => {
                 <li className='modal__list--item'>feeling very unwell</li>
             </ul>
             </div>
-
-            <div className='modal__moreInfo'>
-            <h2 className='modal__moreInfo--text'>MORE INFO HERE</h2>
-            <a  href='https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection/symptoms.html'>
-            <button className='modal__moreInfo--btn'>Covid-19</button> 
-            </a>
-            </div>
+        
 
         </section>
 
