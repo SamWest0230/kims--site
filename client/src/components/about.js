@@ -34,7 +34,7 @@ const About = () => {
                     <div className='about__benefits--desk'>
 
                     <div className='about__benefits--container'>
-                    <h3 className='about__benefits--container-text' >Strees Reduction</h3>
+                    <h3 className='about__benefits--container-text' >Stress Reduction</h3>
                     <img className='about__benefits--container-icon' alt='checkmark' src={check} />
                     </div>
 
@@ -49,12 +49,12 @@ const About = () => {
                     </div>
 
                     <div className='about__benefits--container'>
-                    <h3 className='about__benefits--container-text' >Migraine and Headache Relife</h3>
+                    <h3 className='about__benefits--container-text' >Migraine and Headache Relief</h3>
                     <img className='about__benefits--container-icon' alt='checkmark'  src={check} />
                     </div>
 
                     <div className='about__benefits--container'>
-                    <h3 className='about__benefits--container-text' >Muscle Pain and Tension Relife</h3>
+                    <h3 className='about__benefits--container-text' >Muscle Pain and Tension Relief</h3>
                     <img className='about__benefits--container-icon' alt='checkmark'  src={check} />
                     </div>
 
