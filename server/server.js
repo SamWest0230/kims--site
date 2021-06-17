@@ -3,9 +3,10 @@ const app = express();
 const morgan = require('morgan');
 const rateLimit = require("express-rate-limit");
 const helmet = require('helmet');
-const PORT = 8080;
 const booking = require("./booking.js")
 const cors = require("cors");
+require('dotenv').config()
+const PORT = process.env.PORT;
 
 const limiter = rateLimit({
     max: 100,
