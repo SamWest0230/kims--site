@@ -6,7 +6,7 @@ const helmet = require('helmet');
 const booking = require("./booking.js")
 const cors = require("cors");
 require('dotenv').config()
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 
 const limiter = rateLimit({
     max: 100,
