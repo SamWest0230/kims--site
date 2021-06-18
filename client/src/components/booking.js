@@ -97,7 +97,7 @@ class Booking extends React.Component{
           health: health,
         }
         axios
-          .post("kimnee-chen-rmt.herokuapp.com", massage)
+          .post( massage)
           .then (response => {
             console.log(response)
             if (response.status === 200) {
