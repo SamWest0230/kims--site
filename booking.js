@@ -22,7 +22,6 @@ router.post("/", (req, res) => {
             text: `NAME: ${req.body.name}, \nPHONE: ${req.body.phone}, \nEMAIL: ${req.body.email}, \nAPPOITMENT TYPE: ${req.body.appointment}, \nADDRESS ${req.body.address}, \nDATE: ${req.body.date}, \nTIME: ${req.body.time}, \nHEALTH-CONCERNS: ${req.body.health},`
 
     }
-    console.log(email)
 transporter.sendMail(email, (err, data) => {
     if (err) {
       console.log(err);
