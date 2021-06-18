@@ -4,7 +4,7 @@ import Cancellation from './modals/cancellation';
 import Popup from './modals/popUp';
 import prices from '../data/booking.json'
 import axios from 'axios'
-
+const url = `${process.env.API_URL}/${props.match.params.id}`
 class Booking extends React.Component{
 
     state = {
@@ -98,7 +98,7 @@ class Booking extends React.Component{
           health: health,
         }
         axios
-          .post("http://localhost:8080/booking", massage)
+          .post(url, massage)
           .then (response => {
             console.log(response)
             if (response.status === 200) {
