@@ -21,9 +21,11 @@ class Booking extends React.Component{
 
     }
     handleChange = (e) => {
+      console.log(e.target.value)
         this.setState({
           [e.target.name]: e.target.value
         })
+        console.log(this.state.appointment)
       }
     showModal = () => {
         this.setState({
@@ -134,7 +136,7 @@ class Booking extends React.Component{
                         <option value='none'>Please Select</option>
                         {prices.map(price => {
                             return(
-                            <option id='appointment' value={price.name}>{price.name}</option>
+                            <option id='appointment' onChange={this.handleChange} value={price.name}>{price.name}</option>
                         )})}
                     </select>
                     </div>

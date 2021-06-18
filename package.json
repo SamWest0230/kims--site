@@ -1,23 +1,14 @@
 {
-  "name": "massage-therapist",
+  "name": "server",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SamWest0230/kims--site.git"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/SamWest0230/kims--site/issues"
-  },
-  "homepage": "https://github.com/SamWest0230/kims--site#readme",
-  "description": ""
   "dependencies": {
     "axios": "^0.21.1",
     "cors": "^2.8.5",
@@ -30,5 +21,4 @@
     "nodemon": "^2.0.7",
     "uniqid": "^5.3.0"
   }
-
 }
