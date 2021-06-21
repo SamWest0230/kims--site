@@ -1,22 +1,22 @@
 [
     {
         "id": "1",
-        "name": "45 Minute $55.00"
+        "name": "45 Minute $90"
     },
     {
         "id": "2",
-        "name": "60 Minute $90.00"
+        "name": "60 Minute $120"
     },
     {
         "id": "3",
-        "name": "75 Minute $135.00"
+        "name": "75 Minute $135"
     },
     {
         "id": "4",
-        "name": "90 Minute $150.00"
+        "name": "90 Minute $155"
     },
     {
         "id": "5",
-        "name": "Kids 30 Minute $55.00"
+        "name": "Kids 30 Minute $50"
     }
 ]
