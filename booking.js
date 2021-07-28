@@ -39,7 +39,6 @@ const transporter = nodemailer.createTransport({
       refreshToken: process.env.REFRESH_TOKEN
     }
   });
-  return transporter;
 };
 
 router.post("/", (req, res) => {
