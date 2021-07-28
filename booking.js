@@ -52,9 +52,13 @@ router.post("/", (req, res) => {
   const sendMail = async (emailOptions) => {
     let emailTransporter = createTransporter();
     emailTransporter.sendMail(emailOptions);
-    sendMail(email);
+    sendMail(email, (err) =>{
+      if(err){
+        throw err
+      }
+    });
   }
-    res.send('Email has been sent: check your inbox!');
+    res.send('Email has been sent: check your inbox!');  
 })
 
 module.exports = router;
