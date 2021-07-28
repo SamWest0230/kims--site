@@ -18,7 +18,7 @@ const createTransporter = async () => {
   oauth2Client.setCredentials({
     refresh_token: process.env.REFRESH_TOKEN
   });
-};
+
 const accessToken = new Promise((resolve, reject) => {
   oauth2Client.getAccessToken((err, token) => {
     if (err) {
@@ -39,6 +39,8 @@ const transporter = nodemailer.createTransport({
       refreshToken: process.env.REFRESH_TOKEN
     }
   });
+  return transporter;
+};
 
 router.post("/", (req, res) => {
     const email = {
@@ -50,7 +52,7 @@ router.post("/", (req, res) => {
     }
 transporter.sendMail(email, (err, data) => {
     if (err) {
-      console.log(err);
+      throw err;
       res.status(500).send("Something went wrong.");
     } else {
       res.status(200).send("Email successfully sent to recipient!");
@@ -63,3 +65,4 @@ transporter.sendMail(email, (err, data) => {
 
 
 module.exports = router;
+
