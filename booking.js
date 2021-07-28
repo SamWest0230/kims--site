@@ -56,6 +56,10 @@ router.post("/", (req, res) => {
     sendMail(email);
   }
     res.send('Email has been sent: check your inbox!');
+    if(err){
+      throw err
+    }
+
 })
 
 module.exports = router;
