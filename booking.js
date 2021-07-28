@@ -30,10 +30,10 @@ const OAuth2 = google.auth.OAuth2;
     auth: {
       type: "OAuth2",
       user: process.env.EMAIL,
-      accessToken,
       clientId: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
-      refreshToken: process.env.REFRESH_TOKEN
+      refreshToken: process.env.REFRESH_TOKEN,
+      accessToken:  accessToken
     }
   });
  
