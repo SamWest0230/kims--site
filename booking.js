@@ -19,7 +19,7 @@ const createTransporter = async () => {
     refresh_token: process.env.REFRESH_TOKEN
   });
 
-  const accessToken = new Promise((resolve, reject) => {
+  const accessToken = await new Promise((resolve, reject) => {
     oauth2Client.getAccessToken((err, token) => {
       if (err) {
         reject("Failed to create access token");
@@ -53,10 +53,15 @@ router.post("/", (req, res) => {
   const sendMail = async (emailOptions) => {
     let emailTransporter = await createTransporter();
     await emailTransporter.sendMail(emailOptions);
-  };
-  sendMail({
-    email
-  });
+    
+    sendMail(email);
+  
+  }
+  if (err) {
+    throw err
+  } else {
+    res.send('Email has been sent: check your inbox!');
+  }
 })
 
 module.exports = router;
