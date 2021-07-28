@@ -48,7 +48,6 @@ router.post("/", (req, res) => {
     to: process.env.EMAIL,
     subject: req.body.appointment,
     text: `NAME: ${req.body.name}, \nPHONE: ${req.body.phone}, \nEMAIL: ${req.body.email}, \nAPPOITMENT TYPE: ${req.body.appointment}, \nADDRESS ${req.body.address}, \nDATE: ${req.body.date}, \nTIME: ${req.body.time}, \nHEALTH-CONCERNS: ${req.body.health},`
-
   }
   const sendMail = async (emailOptions) => {
     let emailTransporter = await createTransporter();
@@ -56,10 +55,6 @@ router.post("/", (req, res) => {
     sendMail(email);
   }
     res.send('Email has been sent: check your inbox!');
-    if(err){
-      throw err
-    }
-
 })
 
 module.exports = router;
