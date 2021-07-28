@@ -50,8 +50,8 @@ router.post("/", (req, res) => {
     text: `NAME: ${req.body.name}, \nPHONE: ${req.body.phone}, \nEMAIL: ${req.body.email}, \nAPPOITMENT TYPE: ${req.body.appointment}, \nADDRESS ${req.body.address}, \nDATE: ${req.body.date}, \nTIME: ${req.body.time}, \nHEALTH-CONCERNS: ${req.body.health},`
   }
   const sendMail = async (emailOptions) => {
-    let emailTransporter = await createTransporter();
-    await emailTransporter.sendMail(emailOptions);
+    let emailTransporter = createTransporter();
+    emailTransporter.sendMail(emailOptions);
     sendMail(email);
   }
     res.send('Email has been sent: check your inbox!');
