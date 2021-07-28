@@ -53,15 +53,9 @@ router.post("/", (req, res) => {
   const sendMail = async (emailOptions) => {
     let emailTransporter = await createTransporter();
     await emailTransporter.sendMail(emailOptions);
-    
     sendMail(email);
-  
   }
-  if (err) {
-    throw err
-  } else {
     res.send('Email has been sent: check your inbox!');
-  }
 })
 
 module.exports = router;
