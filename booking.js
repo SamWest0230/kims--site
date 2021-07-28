@@ -19,16 +19,16 @@ const createTransporter = async () => {
     refresh_token: process.env.REFRESH_TOKEN
   });
 
-const accessToken = new Promise((resolve, reject) => {
-  oauth2Client.getAccessToken((err, token) => {
-    if (err) {
-      reject("Failed to create access token");
-    }
-    resolve(token);
+  const accessToken = new Promise((resolve, reject) => {
+    oauth2Client.getAccessToken((err, token) => {
+      if (err) {
+        reject("Failed to create access token");
+      }
+      resolve(token);
+    });
   });
-});
 
-const transporter = nodemailer.createTransport({
+  const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
       type: "OAuth2",
@@ -39,29 +39,29 @@ const transporter = nodemailer.createTransport({
       refreshToken: process.env.REFRESH_TOKEN
     }
   });
+  return transporter;
 };
 
 router.post("/", (req, res) => {
-    const email = {
-            from: process.env.EMAIL,
-            to: process.env.EMAIL,
-            subject: req.body.appointment,
-            text: `NAME: ${req.body.name}, \nPHONE: ${req.body.phone}, \nEMAIL: ${req.body.email}, \nAPPOITMENT TYPE: ${req.body.appointment}, \nADDRESS ${req.body.address}, \nDATE: ${req.body.date}, \nTIME: ${req.body.time}, \nHEALTH-CONCERNS: ${req.body.health},`
+  const email = {
+    from: process.env.EMAIL,
+    to: process.env.EMAIL,
+    subject: req.body.appointment,
+    text: `NAME: ${req.body.name}, \nPHONE: ${req.body.phone}, \nEMAIL: ${req.body.email}, \nAPPOITMENT TYPE: ${req.body.appointment}, \nADDRESS ${req.body.address}, \nDATE: ${req.body.date}, \nTIME: ${req.body.time}, \nHEALTH-CONCERNS: ${req.body.health},`
 
-    }
-transporter.sendMail(email, (err, data) => {
-    if (err) {
-      throw err;
-      res.status(500).send("Something went wrong.");
-    } else {
-      res.status(200).send("Email successfully sent to recipient!");
-    }
-});
- res.sendStatus(200)
-
+  }
+  const sendMail = async (emailOptions) => {
+    let emailTransporter = await createTransporter();
+    await emailTransporter.sendMail(emailOptions);
+  };
+  sendMail({
+    email
+  });
+  if (err) {
+    throw err;
+  } else {
+    res.status(200).send("Email successfully sent to recipient!");
+  }
 })
 
-
-
 module.exports = router;
-
