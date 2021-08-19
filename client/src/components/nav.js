@@ -45,6 +45,9 @@ state = {
                   <Link activeClass="active" to="testimonials" spy={true} smooth={true} duration={1000}>
                   <p className='desk__link'>Testimonials</p>
                   </Link>
+                  <Link activeClass="active" to="footer" spy={true} smooth={true} duration={1000}>
+                  <p className='desk__link'>Contact Me</p>
+                  </Link>
                 </div>
 
                 <h1 className='nav__name'>Kimnee Chen</h1>
@@ -61,6 +64,9 @@ state = {
                   </Link>
                   <Link activeClass="active" to="testimonials" spy={true} smooth={true} duration={1000}>
                   <p className='show__link'>Testimonials</p>
+                  <Link activeClass="active" to="footer" spy={true} smooth={true} duration={1000}>
+                  <p className='show__link'>Contact Me</p>
+                  </Link>
                   </Link>
                 </div>  
     

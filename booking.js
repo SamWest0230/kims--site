@@ -49,7 +49,7 @@ router.post("/", (req, res) => {
         throw err
       }
     })
-    res.send('Email has been sent: check your inbox!');  
+    res.send('Email has been sent!');  
 })
 
 module.exports = router;
