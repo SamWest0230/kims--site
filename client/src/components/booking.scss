@@ -66,7 +66,7 @@
             resize: none;
             max-width: 500px;
 
-            *:active {
+            *:focus {
                 border: 1px solid $cp-dark;
             }
             
@@ -85,6 +85,11 @@
             padding: .3rem .5rem;
             resize: none;
             max-width: 500px;
+
+            
+            *:focus {
+                border: 1px solid $cp-dark;
+            }
 
               
             @include tablet{
