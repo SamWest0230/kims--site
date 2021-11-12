@@ -86,11 +86,15 @@
             &-btn{
                 align-self: center;
                 border: none;
-                border-radius: .5rem;
                 width: 50%;
                 height: 1.5rem;
-                margin: .5rem 0;
-                background-color: $cp-light;
+                margin: 1rem 0;
+                background-color: transparent;
+                background-repeat: no-repeat;
+                border: none;
+                cursor: pointer;
+                overflow: hidden;
+                outline: none;
 
                 @include tablet{
                     width: 30%;
