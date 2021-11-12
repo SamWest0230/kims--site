@@ -66,8 +66,8 @@
             resize: none;
             max-width: 500px;
 
-            *:focus {
-                outline: $cp-dark;
+            *:active {
+                border: 1px solid $cp-dark;
             }
             
             
