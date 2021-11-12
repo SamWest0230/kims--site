@@ -85,7 +85,8 @@
     
             &-btn{
                 align-self: center;
-                border-bottom: 1px solid $cp-white;
+                border: none;
+                border-bottom: 1px solid $cp-light;
                 width: 50%;
                 height: 1.5rem;
                 margin: 1rem 0;
